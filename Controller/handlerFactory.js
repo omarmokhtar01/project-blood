@@ -69,10 +69,8 @@ exports.getAll = (Model, modelName = "") =>
     let filterData = {};
     if (req.params.categoryId) filterData = { category: req.params.categoryId };
     // let filterObj = req.filterData;
-    const countDocument = await Model.countDocuments();
     const apiFeatures = new ApiFeatures(Model.find(filterData), req.query)
-      .search(modelName)
-      .pagination(countDocument);
+      .search(modelName);
     // Execute
     // Destructing data
     const { queryMongoose, paginationResult } = apiFeatures;
