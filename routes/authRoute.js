@@ -1,6 +1,6 @@
 const express = require("express");
 const {
-  ruleSignUpValidator,
+ 
   ruleLoginValidator,
 
 } = require("../utils/validator/authValidate");
