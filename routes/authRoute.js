@@ -1,7 +1,7 @@
 const express = require("express");
 const {
- 
-  ruleLoginValidator,
+  ruleSignUpValidator,
+  ruleLoginValidator
 
 } = require("../utils/validator/authValidate");
 
@@ -13,7 +13,7 @@ const {
 
 const router = express.Router();
 
-router.route("/signup").post( signup);
+router.route("/signup").post(ruleSignUpValidator, signup);
 
 router.route("/login").post(ruleLoginValidator, login);
 
